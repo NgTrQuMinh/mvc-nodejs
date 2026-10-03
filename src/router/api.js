@@ -3,6 +3,7 @@ const apiRouter = express.Router();
 const { postUploadSingleFileAPI, postUploadMultiFileAPI, getAllCustomersAPI, getCustomersAPI, createCustomersAPI, createArrCustomersAPI, updateCustomersAPI, deleteCustomersAPI, deleteArrCustomersAPI } = require('../controller/api/customers');
 const { getAllUsersAPI, getUsersAPI, createUsersAPI, createArrUsersAPI, updateUsersAPI, updateArrUsersAPI, deleteUsersAPI, deleteArrUsersAPI } = require('../controller/api/user')
 const { getProjectsAPI, createProjectsAPI, updateProjectsAPI, deleteProjectsAPI } = require('../controller/api/projects');
+const { getTasksAPI, createTasksAPI, updateTasksAPI, deleteTasksAPI } = require('../controller/api/task');
 
 apiRouter.get('/customers', getAllCustomersAPI);
 apiRouter.get('/customer', getCustomersAPI);
@@ -28,6 +29,11 @@ apiRouter.get('/projects', getProjectsAPI);
 apiRouter.post('/projects', createProjectsAPI);
 apiRouter.put('/projects', updateProjectsAPI);
 apiRouter.delete('/projects', deleteProjectsAPI);
+
+apiRouter.get('/tasks', getTasksAPI);
+apiRouter.post('/tasks', createTasksAPI);
+apiRouter.put('/tasks', updateTasksAPI);
+apiRouter.delete('/tasks', deleteTasksAPI);
 
 
 module.exports = apiRouter;

@@ -16,10 +16,10 @@ const taskSchema = new mongoose.Schema({
     endDate: { type: String },
 
     userSub: userSchema,
-    projectID: {
+    projectID: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Project'
-    }
+    }]
 }, {
     timestamps: true
 })
