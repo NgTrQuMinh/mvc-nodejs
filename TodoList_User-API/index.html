@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Đổi lang thành vi vì nội dung tiếng Việt -->
+<html lang="vi">
+
+<head>
+    <!-- Hỗ trợ tiếng Việt có dấu -->
+    <meta charset="UTF-8">
+    <!-- Giúp giao diện hiển thị đúng trên điện thoại -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề tab trình duyệt -->
+    <title>TodoList User</title>
+    <!-- Nạp file CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Tiêu đề trang -->
+    <h1>TodoList User</h1>
+
+    <!-- Form thêm user, id và name giữ nguyên để JS đọc được -->
+    <form id="formUser">
+        <!-- required: bắt buộc nhập -->
+        <input type="text" name="nameUser" id="nameUser" placeholder="Tên người dùng" required>
+        <!-- type="email": trình duyệt tự kiểm tra định dạng email -->
+        <input type="email" name="emailUser" id="emailUser" placeholder="Email" required>
+        <input type="text" name="cityUser" id="cityUser" placeholder="Thành phố" required>
+        <!-- Nút gửi form -->
+        <button type="submit">Thêm User</button>
+    </form>
+
+    <!-- SỬA: đổi id của table thành userTable (không còn là todoListUser) -->
+    <table id="userTable">
+        <!-- Phần tiêu đề cột, JS không đụng tới nữa -->
+        <thead>
+            <tr>
+                <th>Tên người dùng</th>
+                <th>Email</th>
+                <th>Thành phố</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <!-- SỬA: id todoListUser nằm ở tbody, JS chỉ ghi đè phần thân bảng -->
+        <tbody id="todoListUser"></tbody>
+    </table>
+
+    <!-- Thư viện chống XSS, phải nạp trước main.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.6/purify.min.js"></script>
+    <!-- File JS chính -->
+    <script src="main.js"></script>
+</body>
+
+</html>

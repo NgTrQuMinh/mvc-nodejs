@@ -1,5 +1,7 @@
 require('dotenv').config();
+require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]); // Fix Error querySrv MongoDB Atlas
 const express = require('express');
+const cors = require('cors'); // Cho phép TẤT CẢ domain gọi API
 const connectDB = require('./config/db');
 const configViewEngine = require('./config/viewEngine');
 const apiRouter = require('./router/api');
@@ -12,6 +14,7 @@ const port = process.env.PORT || 3000;
 const hostname = process.env.HOST_NAME || 'localhost';
 
 // Middle
+app.use(cors());
 app.use(fileUpload({
     limits: { fileSize: 50 * 1024 * 1024 },
 }));
